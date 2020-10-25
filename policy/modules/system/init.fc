@@ -100,6 +100,7 @@ ifdef(`distro_gentoo',`
 #
 /usr/sbin/openrc		--	gen_context(system_u:object_r:rc_exec_t,s0)
 /usr/sbin/openrc-init		--	gen_context(system_u:object_r:init_exec_t,s0)
+/usr/sbin/openrc-shutdown	--	gen_context(system_u:object_r:init_exec_t,s0)
 
 #
 # /var
