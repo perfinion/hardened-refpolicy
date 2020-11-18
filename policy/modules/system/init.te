@@ -756,6 +756,7 @@ fs_unmount_all_fs(initrc_t)
 fs_remount_all_fs(initrc_t)
 fs_getattr_all_fs(initrc_t)
 fs_search_all(initrc_t)
+fs_search_all(initrc_state_t)
 fs_getattr_nfsd_files(initrc_t)
 
 # initrc_t needs to do a pidof which requires ptrace
