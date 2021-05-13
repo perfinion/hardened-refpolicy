@@ -82,3 +82,6 @@ optional_policy(`
 	lvm_read_config(dracut_t)
 ')
 
+ifdef(`distro_gentoo',`
+	portage_domtrans_gcc_config(dracut_t)
+')
