@@ -4,6 +4,9 @@ type dracut_t;
 type dracut_exec_t;
 application_domain(dracut_t, dracut_exec_t)
 
+type dracut_conf_t;
+files_config_file(dracut_conf_t)
+
 type dracut_var_log_t;
 logging_log_file(dracut_var_log_t)
 
@@ -18,6 +21,9 @@ allow dracut_t self:process setfscreate;
 allow dracut_t self:capability dac_override;
 allow dracut_t self:fifo_file rw_fifo_file_perms;
 allow dracut_t self:unix_stream_socket create_stream_socket_perms;
+
+list_dirs_pattern(dracut_t, dracut_conf_t, dracut_conf_t)
+read_files_pattern(dracut_t, dracut_conf_t, dracut_conf_t)
 
 manage_files_pattern(dracut_t, dracut_tmp_t, dracut_tmp_t)
 manage_dirs_pattern(dracut_t, dracut_tmp_t, dracut_tmp_t)

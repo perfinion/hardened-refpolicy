@@ -1,3 +1,5 @@
+/etc/dracut\.conf	--	gen_context(system_u:object_r:dracut_conf_t,s0)
+/etc/dracut\.conf\.d(/.*)?	gen_context(system_u:object_r:dracut_conf_t,s0)
 #
 # /usr
 #
