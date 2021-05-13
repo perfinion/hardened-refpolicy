@@ -34,6 +34,13 @@ files_tmp_filetrans(dracut_t, dracut_tmp_t, dir)
 manage_files_pattern(dracut_t, dracut_var_log_t, dracut_var_log_t)
 logging_log_filetrans(dracut_t, dracut_var_log_t, file)
 
+auth_manage_shadow(dracut_t)
+auth_relabelto_shadow(dracut_t)
+
+domain_obj_id_change_exemption(dracut_t)
+domain_role_change_exemption(dracut_t)
+domain_system_change_exemption(dracut_t)
+
 kernel_read_messages(dracut_t)
 kernel_read_system_state(dracut_t)
 
