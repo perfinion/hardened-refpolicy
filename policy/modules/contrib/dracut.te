@@ -17,8 +17,8 @@ files_tmp_file(dracut_tmp_t)
 #
 # Local policy
 #
-allow dracut_t self:process setfscreate;
-allow dracut_t self:capability dac_override;
+allow dracut_t self:process { getsched setfscreate };
+allow dracut_t self:capability { dac_override dac_read_search fsetid mknod sys_admin };
 allow dracut_t self:fifo_file rw_fifo_file_perms;
 allow dracut_t self:unix_stream_socket create_stream_socket_perms;
 
