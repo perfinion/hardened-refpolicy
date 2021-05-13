@@ -50,6 +50,7 @@ corecmd_mmap_all_executables(dracut_t)
 
 dev_read_kmsg(dracut_t)
 dev_read_sysfs(dracut_t)
+dev_read_urand(dracut_t)
 
 domain_use_interactive_fds(dracut_t)
 
