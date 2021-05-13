@@ -76,6 +76,8 @@ modutils_read_module_deps(dracut_t)
 
 seutil_relabelto_bin_policy(dracut_t)
 
+storage_getattr_fixed_disk_dev(dracut_t)
+
 udev_read_rules_files(dracut_t)
 
 userdom_search_user_home_dirs(dracut_t)
