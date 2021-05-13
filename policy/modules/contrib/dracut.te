@@ -61,6 +61,7 @@ files_read_kernel_modules(dracut_t)
 files_read_usr_files(dracut_t)
 files_search_runtime(dracut_t)
 files_tmp_filetrans(dracut_t, dracut_tmp_t, { file dir })
+files_unconfined(dracut_t)
 
 fs_getattr_xattr_fs(dracut_t)
 
