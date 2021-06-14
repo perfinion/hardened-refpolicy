@@ -13,6 +13,9 @@ logging_log_file(dracut_var_log_t)
 type dracut_tmp_t;
 files_tmp_file(dracut_tmp_t)
 
+attribute_role dracut_roles;
+role dracut_roles types dracut_t;
+
 ########################################
 #
 # Local policy
@@ -65,7 +68,7 @@ files_unconfined(dracut_t)
 
 fs_getattr_xattr_fs(dracut_t)
 
-libs_exec_ldconfig(dracut_t)
+libs_run_ldconfig(dracut_t, dracut_roles)
 libs_exec_ld_so(dracut_t)
 libs_exec_lib_files(dracut_t)
 
