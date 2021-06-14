@@ -230,6 +230,10 @@ optional_policy(`
 ')
 
 optional_policy(`
+	dracut_run(portage_t, portage_roles)
+')
+
+optional_policy(`
 	gpg_spec_domtrans(portage_t, portage_fetch_t)
 ')
 
