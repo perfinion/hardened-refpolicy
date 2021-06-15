@@ -51,6 +51,8 @@ corecmd_exec_bin(dracut_t)
 corecmd_exec_shell(dracut_t)
 corecmd_mmap_all_executables(dracut_t)
 
+dev_getattr_lvm_control(dracut_t)
+dev_read_lvm_control(dracut_t)
 dev_read_kmsg(dracut_t)
 dev_read_sysfs(dracut_t)
 dev_read_urand(dracut_t)
