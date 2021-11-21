@@ -44,6 +44,8 @@ allow xscreensaver_t xscreensaver_helper_t:process { signal sigstop };
 
 allow xscreensaver_t xscreensaver_config_t:file manage_file_perms;
 
+can_exec(xscreensaver_t, xscreensaver_exec_t)
+
 kernel_read_system_state(xscreensaver_t)
 
 files_read_usr_files(xscreensaver_t)
@@ -61,6 +63,7 @@ init_read_utmp(xscreensaver_t)
 logging_send_audit_msgs(xscreensaver_t)
 logging_send_syslog_msg(xscreensaver_t)
 
+miscfiles_read_fonts(xscreensaver_t)
 miscfiles_read_localization(xscreensaver_t)
 
 userdom_use_user_terminals(xscreensaver_t)
@@ -87,6 +90,10 @@ tunable_policy(`xscreensaver_read_generic_user_content',`
 	userdom_dontaudit_read_user_tmp_files(xscreensaver_t)
 ')
 
+optional_policy(`
+    dbus_all_session_bus_client(xscreensaver_t)
+')
+
 ########################################
 #
 # Helper local policy
@@ -94,7 +101,7 @@ tunable_policy(`xscreensaver_read_generic_user_content',`
 
 allow xscreensaver_helper_t self:capability { setgid setuid };
 dontaudit xscreensaver_helper_t self:capability { dac_override dac_read_search };
-allow xscreensaver_helper_t self:process { execmem getcap getsched signal };
+allow xscreensaver_helper_t self:process { execmem getcap getsched setsched signal };
 allow xscreensaver_helper_t self:fifo_file rw_fifo_file_perms;
 
 allow xscreensaver_helper_t xscreensaver_helper_exec_t:file execute_no_trans;
