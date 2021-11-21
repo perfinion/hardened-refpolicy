@@ -49,6 +49,7 @@ template(`xscreensaver_role',`
 	allow $2 xscreensaver_tmpfs_t:file { manage_file_perms relabel_file_perms };
 
 	allow xscreensaver_helper_t $3:fd use;
+	allow xscreensaver_helper_t $3:fifo_file read_fifo_file_perms;
 
 	optional_policy(`
 		systemd_user_app_status($1, xscreensaver_t)
