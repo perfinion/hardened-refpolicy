@@ -5,4 +5,10 @@ HOME_DIR/XScreenSaver		--	gen_context(system_u:object_r:xscreensaver_config_t,s0
 /usr/bin/xscreensaver-getimage.*	--	gen_context(system_u:object_r:xscreensaver_helper_exec_t,s0)
 /usr/bin/xscreensaver-gl-helper	--	gen_context(system_u:object_r:xscreensaver_helper_exec_t,s0)
 
-/usr/libexec/xscreensaver(/.*)?	--	gen_context(system_u:object_r:xscreensaver_helper_exec_t,s0)
+/usr/lib/misc/xscreensaver/xscreensaver-auth	--	gen_context(system_u:object_r:xscreensaver_exec_t,s0)
+/usr/lib/misc/xscreensaver/xscreensaver-systemd	--	gen_context(system_u:object_r:xscreensaver_exec_t,s0)
+/usr/lib/misc/xscreensaver/.*	--	gen_context(system_u:object_r:xscreensaver_helper_exec_t,s0)
+
+/usr/libexec/xscreensaver/xscreensaver-auth	--	gen_context(system_u:object_r:xscreensaver_exec_t,s0)
+/usr/libexec/xscreensaver/xscreensaver-systemd	--	gen_context(system_u:object_r:xscreensaver_exec_t,s0)
+/usr/libexec/xscreensaver/.*	--	gen_context(system_u:object_r:xscreensaver_helper_exec_t,s0)
