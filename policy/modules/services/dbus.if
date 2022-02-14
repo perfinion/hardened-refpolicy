@@ -102,9 +102,9 @@ template(`dbus_role_template',`
 	domtrans_pattern($3, dbusd_exec_t, $1_dbusd_t)
 
 	ps_process_pattern($3, $1_dbusd_t)
-	allow $3 $1_dbusd_t:process { ptrace signal_perms };
+	allow $3 $1_dbusd_t:process { ptrace signal_perms noatsecure };
 
-	allow $1_dbusd_t $3:process sigkill;
+	allow $1_dbusd_t $3:process { sigkill noatsecure };
 
 	corecmd_bin_domtrans($1_dbusd_t, $3)
 	corecmd_shell_domtrans($1_dbusd_t, $3)
@@ -453,6 +453,7 @@ interface(`dbus_all_session_domain',`
 	')
 
 	domtrans_pattern(session_bus_type, $2, $1)
+	allow session_bus_type $1:process noatsecure;
 
 	dbus_all_session_bus_client($1)
 	dbus_connect_all_session_bus($1)
@@ -487,6 +488,7 @@ template(`dbus_spec_session_domain',`
 	')
 
 	domtrans_pattern($1_dbusd_t, $3, $2)
+	allow $1_dbusd_t $2:process noatsecure;
 
 	dbus_spec_session_bus_client($1, $2)
 	dbus_connect_spec_session_bus($1, $2)
@@ -584,6 +586,7 @@ interface(`dbus_system_domain',`
 	dbus_connect_system_bus($1)
 
 	ps_process_pattern(system_dbusd_t, $1)
+	allow system_dbusd_t $1:process noatsecure;
 
 	userdom_read_all_users_state($1)
 
