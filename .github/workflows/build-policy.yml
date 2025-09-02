@@ -28,6 +28,7 @@ jobs:
     runs-on: ubuntu-22.04
 
     strategy:
+      fail-fast: false
       matrix:
         # matrix updates must also be duplicated to validate-policy.yml and diff-policy.yml
         distro: ["gentoo"]
