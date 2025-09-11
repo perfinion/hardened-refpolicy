@@ -456,6 +456,7 @@ selinux_compute_access_vector(run_init_t)
 selinux_compute_create_context(run_init_t)
 selinux_compute_relabel_context(run_init_t)
 selinux_compute_user_contexts(run_init_t)
+selinux_use_status_page(run_init_t)
 
 auth_use_nsswitch(run_init_t)
 auth_run_chk_passwd(run_init_t, run_init_roles)
