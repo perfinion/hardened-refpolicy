@@ -1031,6 +1031,7 @@ ifdef(`distro_gentoo',`
 
 	# /lib/rcscripts/net/system.sh rewrites resolv.conf :(
 	sysnet_manage_config(initrc_t)
+	sysnet_read_dhcp_config(initrc_t)
 
 	optional_policy(`
 		abrt_manage_runtime_files(initrc_t)
