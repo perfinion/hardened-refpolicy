@@ -32,7 +32,7 @@ files_runtime_file(tmpfiles_runtime_t)
 # Local policy
 #
 
-allow tmpfiles_t self:capability { mknod chown fowner fsetid };
+allow tmpfiles_t self:capability { chown dac_read_search fowner fsetid mknod };
 allow tmpfiles_t self:process { getsched setfscreate };
 allow tmpfiles_t self:fifo_file rw_fifo_file_perms;
 allow tmpfiles_t self:unix_dgram_socket create_socket_perms;
