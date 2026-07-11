@@ -33,6 +33,7 @@ files_type(vnstatd_var_lib_t)
 # Daemon local policy
 #
 
+allow vnstatd_t self:capability { setgid setuid };
 allow vnstatd_t self:process signal;
 allow vnstatd_t self:fifo_file rw_fifo_file_perms;
 allow vnstatd_t self:unix_stream_socket { accept listen };
